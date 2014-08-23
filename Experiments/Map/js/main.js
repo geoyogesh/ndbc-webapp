@@ -1,7 +1,7 @@
 var Stations;
 function Station(x) {
 	"use strict";
-	
+
 	var y = x.split(' '), inputarray = [];
 	y.forEach(function (entry) {
 		if (entry) {
@@ -39,7 +39,7 @@ function loadXMLDoc() {
 	var xmlhttp = new XMLHttpRequest();
 	xmlhttp.onreadystatechange = function () {
 		if (xmlhttp.readyState === 4) {
-			
+
 			if (xmlhttp.status === 200) {
 				var station_array = [], x  =   xmlhttp.responseText.split('\n'), i;
 				for (i = 2; i < x.length; i = i + 1) {
