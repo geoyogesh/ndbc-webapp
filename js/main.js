@@ -53,10 +53,9 @@ function loadXMLDoc() {
 			}
 		}
 	};
+    //http://www.ndbc.noaa.gov/data/latest_obs/latest_obs.txt
 	xmlhttp.open("GET", "data/latest_obs.txt", true);
 	xmlhttp.send();
-
-
 }
 loadXMLDoc();
 
