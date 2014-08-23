@@ -1,4 +1,4 @@
-
+var Stations;
 function Station(x) {
 	"use strict";
 	
@@ -45,7 +45,7 @@ function loadXMLDoc() {
 				for (i = 2; i < x.length; i = i + 1) {
 					station_array.push(new Station(x[i]));
 				}
-				window.alert(station_array[0].lat);
+				Stations = station_array;
 			} else if (xmlhttp.status === 400) {
 				window.alert('There was an error 400');
 			} else {
@@ -58,6 +58,7 @@ function loadXMLDoc() {
 
 
 }
-
 loadXMLDoc();
+
+
 
