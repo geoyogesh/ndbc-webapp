@@ -1,13 +1,15 @@
 var Stations;
-function Station(x) {
-	"use strict";
 
-	var y = x.split(' '), inputarray = [];
-	y.forEach(function (entry) {
-		if (entry) {
-			inputarray.push(entry);
-		}
-	});
+function Station(x) {
+    "use strict";
+
+    var y = x.split(' '),
+        inputarray = [];
+    y.forEach(function (entry) {
+        if (entry) {
+            inputarray.push(entry);
+        }
+    });
 
     this.stationId = inputarray[0];
     this.lat = inputarray[1];
@@ -35,29 +37,28 @@ function Station(x) {
 }
 
 function loadXMLDoc() {
-	"use strict";
-	var xmlhttp = new XMLHttpRequest();
-	xmlhttp.onreadystatechange = function () {
-		if (xmlhttp.readyState === 4) {
+    "use strict";
+    var xmlhttp = new XMLHttpRequest();
+    xmlhttp.onreadystatechange = function () {
+        if (xmlhttp.readyState === 4) {
 
-			if (xmlhttp.status === 200) {
-				var station_array = [], x  =   xmlhttp.responseText.split('\n'), i;
-				for (i = 2; i < x.length; i = i + 1) {
-					station_array.push(new Station(x[i]));
-				}
-				Stations = station_array;
-			} else if (xmlhttp.status === 400) {
-				window.alert('There was an error 400');
-			} else {
-				window.alert('something else other than 200 was returned');
-			}
-		}
-	};
+            if (xmlhttp.status === 200) {
+                var station_array = [],
+                    x = xmlhttp.responseText.split('\n'),
+                    i;
+                for (i = 2; i < x.length; i = i + 1) {
+                    station_array.push(new Station(x[i]));
+                }
+                Stations = station_array;
+            } else if (xmlhttp.status === 400) {
+                window.alert('There was an error 400');
+            } else {
+                window.alert('something else other than 200 was returned');
+            }
+        }
+    };
     //http://www.ndbc.noaa.gov/data/latest_obs/latest_obs.txt
-	xmlhttp.open("GET", "data/latest_obs.txt", true);
-	xmlhttp.send();
+    xmlhttp.open("GET", "data/latest_obs.txt", true);
+    xmlhttp.send();
 }
 loadXMLDoc();
-
-
-
