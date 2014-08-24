@@ -34,6 +34,15 @@
         ng-show
         ng-hide
     -->
+    
+    <!--iterating over list of items-->
+    <div ng-init="names=['Dave','Jeff','Heedy','Danny']">
+        <ul>
+            <li ng-repeat="name in names">{{name}}</li>
+        </ul>
+    </div>
+    
+    
     <script src="script/angular.min.js" type="text/javascript" ></script>
 </body>
 </html>
