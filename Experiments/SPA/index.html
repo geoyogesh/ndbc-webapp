@@ -2,6 +2,7 @@
 <html ng-app>
 <head>
     <title>NDBC WebApp</title>
+    <link rel="stylesheet" type="text/css" href="css/style.css">
 </head>
 <body ng-init="name='james';isHidden=true">
     <div ng-hide="isHidden">
@@ -16,6 +17,23 @@
         </div>
     Hide: <input type="checkbox" ng-model="isHidden" />
     <button ng-click="name='Yogesh'">Click Me</button>
+
+
+    <br />
+    <div ng-init="data={name:'yogesh', isloggedin:false, status:'red'}" ng-cloak>
+        <div ng-switch on="data.isloggedin">
+        <div ng-switch-when="true"> {{data.name}} </div>
+        <div ng-switch-default ng-class="data.status"> Login </div>
+            </div>
+    </div>
+
+    <!--
+        ng-cloak
+        ng-switch
+        ng-class
+        ng-show
+        ng-hide
+    -->
     <script src="script/angular.min.js" type="text/javascript" ></script>
 </body>
 </html>
