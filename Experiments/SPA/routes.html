@@ -1,0 +1,32 @@
+add angular-route.js
+
+var demoApp=angular.module('demoApp',['ngRoute'])
+
+app.config(function ($routeProvider)
+{
+    //routes go there
+});
+
+
+app.config(function($routeProvider){
+$routeProvider
+    .when('/',
+    {
+    controller:'CustomerController',
+    templateUrl:'app/viewscustomer.html'
+    })
+.when('/editCustomer/:customerId',
+    {
+    controller:'CustomerController',
+    templateUrl:'app/viewscustomer.html'
+    })
+    .otherwise({ redirectTo:'/'})
+})
+
+function($scope, $routeParams){
+    $scope.customerId=$routeParams.customerId;
+}
+
+<ng-view></ng-view>
+<div ng-view></div>
+
