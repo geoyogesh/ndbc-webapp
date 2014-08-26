@@ -1,0 +1,108 @@
+<!--Type1-->
+<script>
+    function custController($scope) {
+        $scope.sortBy = 'name';
+        $scope.reverse = false;
+
+
+        $scope.customers = [{
+            name: 'yogesh',
+            joined: '22-2-02'
+        }]
+        $scope.doSort = function (propName) {
+            $scope.sortBy = propName;
+            $scope.reverse = !$scope.reverse
+        }
+    }
+</script>
+<div>
+    <tr ng-repeat="cust in $scope.customers" ng-controller="custController">
+
+    </tr>
+</div>
+<span>Total cust {{$scope.customers.length}}</span>
+
+
+<!--Type 2-->
+<script>
+    function custController() {
+        this.sortBy = 'name';
+        this.reverse = false;
+
+
+        this.customers = [{
+            name: 'yogesh',
+            joined: '22-2-02'
+        }]
+        this.doSort = function (propName) {
+            this.sortBy = propName;
+            this.reverse = !$scope.reverse
+        }
+    }
+</script>
+<div>
+    <tr ng-repeat="cust in $scope.customers" ng-controller="custController as ctrl">
+
+    </tr>
+</div>
+
+
+
+<!--Modules-->
+<!--Method1-->
+<html ng-app="customerApp" or CustomerModule>
+
+</html>
+
+app.js
+var demoapp=angular.module('customerApp', []);
+
+demoApp.controller('SimpleController', function($scope){
+$scope.customers = [
+{name:'dave', city:'phoenix'},
+{name:'dave', city:'phoenix'},
+];
+})
+
+
+<!--method2-->
+angular.module('customerApp', []);
+
+angular.module('customerApp').controller('SimpleController', function($scope){
+$scope.customers = [
+{name:'dave', city:'phoenix'},
+{name:'dave', city:'phoenix'},
+];
+})
+
+<!--method 3-->
+var demoapp=angular.module('customerApp', []);
+
+(function(){
+var SimpleController = function($scope){
+$scope.customers =[
+{name:'',city:''},
+{name:'',city:''}
+];
+};
+
+angular.module('demoApp')
+    .controller('SimpleController',SimpleController)
+}());
+
+Dealing with minification
+-------------------------
+angular.module('demoApp')
+    .controller('SimpleController',['$scope',function($scope){
+$scope.customers =[
+{name:'',city:''},
+{name:'',city:''}
+];
+};])
+
+or
+
+SimpleController.$inject = ['$scope'];
+
+
+
