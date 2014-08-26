@@ -1,0 +1,94 @@
+Factories and Services:
+- Singleton
+
+builtin
+$http
+$timeout
+$window
+$location- url,#
+$q - asyn calls
+rootscope- to reate new scope
+$interval-timmer repeating
+$filter
+$log
+
+Remove deplcated code- to factory
+------------------------
+
+Factory
+--------
+
+Create and return custom object
+
+Creating a factory
+----------------------
+module.factory()
+
+
+(function(){
+var customFactory = function(){
+var customer = [...];
+var factory = {};
+factory.getCustomers = function(){
+return customers;
+};
+return factory;
+};
+
+or
+
+var customFactory = function(){
+var customer = [...];
+return {
+    getCustomers = function(){
+        return customers;
+    };
+};
+
+angular.module('customersApp')
+    .factory('customersFactory', customersFactory);
+
+}());
+
+using factory inside services
+---------------------------------
+var CustomerController = function($scope,customersFactory)
+{
+    function init(){
+        $scope.customers = customersFactory.getCustomers();
+    }
+};
+
+customerController.$inject = ['$scope','customerFactory'];
+
+angular.module('customerApp')
+    .controller('CustomersController',CustomersController)
+
+Constant and Values
+--------------------
+
+application title, version
+
+
+AnjularJS, Ajax
+--------------
+
+setvices- $http,$resource
+
+ return $http.get('api/customers'); - returns promises
+
+
+customerFactory.getCustomers()
+    .success(function(customers){
+        $scope.customers = customers;
+})
+    .error(function(data, status, headers, config){
+        //error!
+        $log.log(data.error + ' ' +status)
+});
+
+
+
+
+
+
