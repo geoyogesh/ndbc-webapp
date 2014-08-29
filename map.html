@@ -1,23 +1,16 @@
 <!DOCTYPE html>
-<html ng-app="app">
+<html ng-app="ndbcApp">
 
 <head>
-    <title>NDBC App</title>
+    <title>NDBC WebApp</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-
+    <!--Angular Animate classes -->
+    <link href="assests/css/ng-animate.css" rel="stylesheet" type="text/css" />
     <!-- Step 1. Add CSS for Bootstrap, ArcGIS and Bootstrap-map-js -->
-
     <link href="/bower_components/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" media="screen">
     <link rel="stylesheet" type="text/css" href="http://js.arcgis.com/3.10/js/esri/css/esri.css">
     <link rel="stylesheet" type="text/css" href="/bower_components/bootstrap-map-js/src/css/bootstrapmap.css">
     <link rel="stylesheet" type="text/css" href="assests/css/style.css">
-    <style>
-        <!-- Set the responsive map size here --> #mapDiv {
-            min-height: 100%;
-            min-width: 100%;
-        }
-    </style>
-
 </head>
 
 <body>
@@ -25,9 +18,7 @@
     <div id="mapDiv"></div>
 
 
-    <div ng-controller="MainController" class="howerbox">
-        {{val}}
-    </div>
+    <div ng-view class="slide-left panel"></div>
 
     <!-- JS to Load the responsive map -->
     <script type="text/javascript">
@@ -48,7 +39,7 @@
                     basemap: "national-geographic",
                     center: [-122.45, 37.77],
                     zoom: 12,
-                    scrollWheelZoom: false
+                    scrollWheelZoom: true
                 });
             });
     </script>
@@ -56,7 +47,12 @@
     <script src="bower_components/jquery/dist/jquery.min.js"></script>
     <script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
     <script src="bower_components/angular/angular.min.js"></script>
+    <script src="bower_components/angular-route/angular-route.min.js"></script>
+    <script src="bower_components/angular-animate/angular-animate.min.js"></script>
     <script src="app/app.js"></script>
+    <script src="app/controllers/IntroController.js"></script>
+    <script src="app/controllers/LatestController.js"></script>
+    <script src="app/services/latestobsFactory.js"></script>
 </body>
 
 </html>

@@ -1,5 +1,13 @@
-.howerbox {
+#mapDiv {
+    min-height: 100%;
+    min-width: 100%;
+}
+.panel {
+    float: right;
     position: absolute;
-    right: 100px;
+    z-index: 10000;
     top: 100px;
+    right: 20px;
+    width: 300px;
+    height: 500px;
 }
