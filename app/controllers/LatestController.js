@@ -1,9 +1,11 @@
 (function () {
     var LatestController = function ($scope, $routeParams, $interval, latestobsFactory) {
         $scope.stationId = $routeParams.stationId;
+        console.log($scope.stationId);
         $scope.message = "Not Init";
 
         $scope.bouyData = [];
+        $scope.selectedBouyData = undefined;
         $scope.updatedOn = '';
 
         function Station(x) {
@@ -51,10 +53,20 @@
                         $scope.bouyData.push(new Station(x[i]));
                     }
                     $scope.updatedOn = new Date();
+
+                    if (typeof $routeParams.stationId !== "undefined") {
+                        for (i = 0; i < $scope.bouyData.length; i = i + 1) {
+                            if ($scope.bouyData[i].stationId == $routeParams.stationId) {
+                                $scope.selectedBouyData = $scope.bouyData[i];
+                                break;
+                            }
+                        }
+                    }
                 })
                 .error(function (data, status, headers, config) {
                     //TODO handle error
                 });
+
         }
         init();
 

@@ -13,11 +13,7 @@
             })
             .when('/latest/:stationId', {
                 controller: 'LatestController',
-                templateUrl: 'app/views/latest.html'
-            })
-            .when('/history/:stationId', {
-                controller: 'HistoryController',
-                templateUrl: 'app/views/history.html'
+                templateUrl: 'app/views/details.html'
             })
             .otherwise({
                 redirectTo: '/'
