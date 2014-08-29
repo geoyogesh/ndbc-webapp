@@ -1,1 +1,9 @@
+<a href="#/latest">back</a>
 <h1>{{stationId}}</h1>
+<h2>Updated On: {{updatedOn}}</h2>
+<ul>
+    <li ng-repeat="data in bouyData">
+    {{data.stationId}} - {{data.WVHT}} <a ng-href="#/latest/{{data.stationId}}">link</a>
+    </li>
+</ul>
+
