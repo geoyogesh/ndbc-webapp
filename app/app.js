@@ -1,5 +1,5 @@
 (function () {
-    var app = angular.module('ndbcApp', ['ngRoute']);
+    var app = angular.module('ndbcApp', ['ngRoute', 'ngAnimate']);
 
     app.config(function ($routeProvider) {
         $routeProvider

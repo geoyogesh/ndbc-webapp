@@ -1,9 +1,9 @@
 <a href="#/">back</a>
 <h1>{{stationId}}</h1>
 <h2>Updated On: {{updatedOn}}</h2>
-<input type="text" ng-model="stid.stationId"/>
+<input type="text" ng-model="stid.stationId" />
 <ul>
-    <li ng-repeat="data in bouyData | filter:stid">
-    {{data.stationId}} - {{data.WVHT}} <a ng-href="#/latest/{{data.stationId}}">link</a>
+    <li ng-repeat="data in bouyData | filter:stid" class="scale-fade">
+        {{data.stationId}} - {{data.WVHT}} <a ng-href="#/latest/{{data.stationId}}">link</a>
     </li>
 </ul>

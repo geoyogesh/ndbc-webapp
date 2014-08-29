@@ -44,12 +44,12 @@ function loadXMLDoc() {
 
             if (xmlhttp.status === 200) {
                 var station_array = [],
-                    x = xmlhttp.responseText.split('\n'),
-                    i;
-                for (i = 2; i < x.length; i = i + 1) {
-                    station_array.push(new Station(x[i]));
-                }
-                Stations = station_array;
+    x = xmlhttp.responseText.split('\n'),
+    i;
+for (i = 2; i < x.length; i = i + 1) {
+    station_array.push(new Station(x[i]));
+}
+Stations = station_array;
             } else if (xmlhttp.status === 400) {
                 window.alert('There was an error 400');
             } else {
