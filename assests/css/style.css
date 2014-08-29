@@ -1,13 +1,203 @@
 #mapDiv {
-    min-height: 100%;
-    min-width: 100%;
+	margin-top: 50px;
+	min-height: 100%;
+	min-width: 100%;
 }
 .panel {
-    float: right;
-    position: absolute;
-    z-index: 10000;
-    top: 100px;
-    right: 20px;
-    width: 300px;
-    height: 500px;
+	float: right;
+	position: absolute;
+	z-index: 10000;
+	top: 50px;
+	right: 0px;
+	width: 300px;
+	height: 100%;
+	background: rgba(30, 30, 30, .98);
+	-webkit-box-shadow: -3px 2px 6px 0px rgba(50, 50, 50, 0.75);
+	-moz-box-shadow: -3px 2px 6px 0px rgba(50, 50, 50, 0.75);
+	box-shadow: -3px 2px 6px 0px rgba(50, 50, 50, 0.75);
+}
+.sObjects {
+	overflow: scroll;
+	height: 400px;
+}
+.ndbcheader {
+	-moz-transition: all 200ms linear;
+	-o-transition: all 200ms linear;
+	-webkit-transition: all 200ms linear;
+	transition: all 200ms linear;
+	background: black;
+	height: 50px;
+	left: 0;
+	top: 0;
+	position: fixed;
+	width: 100%;
+	z-index: 101;
+}
+.ndbctitle {
+	text-align: center;
+	height: 50px;
+	text-align: center;
+	color: white;
+	text-transform: uppercase;
+	padding: 1px;
+	font-family: 'Raleway', cursive;
+	font-weight: 100;
+	position: relative;
+	background: -webkit-linear-gradient(left, black, #eee, black);
+	background: -moz-linear-gradient(left, black, #eee, black);
+	background: -ms-linear-gradient(left, black, #eee, black);
+	background: -o-linear-gradient(left, black, #eee, black);
+}
+.cssmenu {
+	background: rgba(0, 0, 0, .7);
+}
+.cssmenu ul {
+	padding-left: 0px;
+	margin-left: 3px;
+}
+.cssmenu ul li {
+	border-color: #000000;
+	border-width: 1px;
+	box-shadow: 0 0 3px 3px rgba(50, 50, 50, 1);
+	display: inline-block;
+	margin-bottom: 5px;
+	margin-top: 5px;
+}
+.cssmenu ul li a {
+	color: #000;
+	display: block;
+	font-family: 'Karla', sans-serif;
+	font-size: 12px;
+	letter-spacing: 1px;
+	padding: 25px 15px;
+	text-transform: uppercase;
+	border-color: #000000;
+}
+.cssmenu li.active > a,
+.cssmenu li > a:hover {
+	background: rgba(30, 30, 30, 1);
+	color: #fff;
+	transition: all 0.3s ease 0s;
+	text-decoration: none;
+}
+.ch-grid {
+	margin: 20px 0 0 0;
+	padding: 0;
+	list-style: none;
+	display: block;
+	text-align: center;
+	width: 100%;
+}
+.ch-grid:after,
+.ch-item:before {
+	content: '';
+	display: table;
+}
+.ch-grid:after {
+	clear: both;
+}
+.ch-grid li {
+	width: 220px;
+	height: 220px;
+	display: inline-block;
+	margin: 20px;
+}
+.ch-item {
+	width: 100%;
+	height: 100%;
+	border-radius: 50%;
+	position: relative;
+	box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+	cursor: default;
+}
+.ch-info-wrap {
+	position: absolute;
+	width: 180px;
+	height: 180px;
+	border-radius: 50%;
+	perspective: 800px;
+	transition: all 0.4s ease-in-out;
+	top: 20px;
+	left: 20px;
+	background: #f9f9f9 url(../images/bg.jpg);
+	box-shadow: 0 0 0 20px rgba(255, 255, 255, 0.2), inset 0 0 3px rgba(115, 114, 23, 0.8);
+}
+.ch-info {
+	position: absolute;
+	width: 180px;
+	height: 180px;
+	border-radius: 50%;
+	transition: all 0.4s ease-in-out;
+	transform-style: preserve-3d;
+}
+.ch-info > div {
+	display: block;
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	border-radius: 50%;
+	background-position: center center;
+	backface-visibility: hidden;
+}
+.ch-info .ch-info-back {
+    transform: rotate3d(0,1,0,180deg);
+    background: #000;
+}
+.ch-img-1 {
+    background-image: url(../images/10.jpg);
+}
+
+.ch-img-2 {
+    background-image: url(../images/11.jpg);
+}
+
+.ch-img-3 {
+    background-image: url(../images/12.jpg);
+}
+.ch-info h3 {
+    color: #fff;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-size: 14px;
+    margin: 0 15px;
+    padding: 40px 0 0 0;
+    height: 90px;
+    font-family: 'Open Sans', Arial, sans-serif;
+    text-shadow:
+        0 0 1px #fff,
+        0 1px 2px rgba(0,0,0,0.3);
+}
+
+.ch-info p {
+    color: #fff;
+    padding: 10px 5px;
+    font-style: italic;
+    margin: 0 30px;
+    font-size: 12px;
+    border-top: 1px solid rgba(255,255,255,0.5);
+}
+
+.ch-info p a {
+    display: block;
+    color: rgba(255,255,255,0.7);
+    font-style: normal;
+    font-weight: 700;
+    text-transform: uppercase;
+    font-size: 9px;
+    letter-spacing: 1px;
+    padding-top: 4px;
+    font-family: 'Open Sans', Arial, sans-serif;
+}
+
+.ch-info p a:hover {
+    color: rgba(255,242,34, 0.8);
+}
+.ch-item:hover .ch-info-wrap {
+    box-shadow:
+        0 0 0 0 rgba(255,255,255,0.8),
+        inset 0 0 3px rgba(115,114, 23, 0.8);
+}
+
+.ch-item:hover .ch-info {
+    transform: rotate3d(0,1,0,-180deg);
 }

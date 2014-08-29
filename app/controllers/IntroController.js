@@ -1,6 +1,6 @@
 (function () {
     var IntroController = function ($scope) {
-        $scope.message = 'This is NDBC Web Application';
+        $scope.message = 'xxxxxxxxxxxxxx';
 
         $scope.showAlert = function (propName) {
             alert('this is simple messagebox');
