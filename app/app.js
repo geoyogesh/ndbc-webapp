@@ -1,8 +1,23 @@
-var app = angular.module('app', ['controller']);
+(function () {
+    var app = angular.module('ndbcApp', ['ngRoute']);
 
-angular.module('controller', []).controller('MainController', function($scope) {
-    $scope.val = 'test123';
-    $scope.func = function() {
-        return "abc" + "def";
-    };
-});
+    app.config(function ($routeProvider) {
+        $routeProvider
+            .when('/', {
+                controller: 'IntroController',
+                templateUrl: '/app/views/intro.html'
+            })
+            .when('/latest/:stationId', {
+                controller: 'LatestController',
+                templateUrl: '/app/views/latest.html'
+            })
+            .when('/history/:stationId', {
+                controller: 'HistoryController',
+                templateUrl: '/app/views/history.html'
+            })
+            .otherwise({
+                redirectTo: '/'
+            });
+    });
+
+}());
