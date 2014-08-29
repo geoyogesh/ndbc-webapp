@@ -7,7 +7,7 @@
         };
     };
 
-    IntroController.$inject = [$scope];
+    IntroController.$inject = ['$scope'];
 
     angular.module('ndbcApp')
         .controller('IntroController', IntroController);

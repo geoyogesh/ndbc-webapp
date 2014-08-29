@@ -5,15 +5,19 @@
         $routeProvider
             .when('/', {
                 controller: 'IntroController',
-                templateUrl: '/app/views/intro.html'
+                templateUrl: 'app/views/intro.html'
+            })
+            .when('/latest', {
+                controller: 'LatestController',
+                templateUrl: 'app/views/latest.html'
             })
             .when('/latest/:stationId', {
                 controller: 'LatestController',
-                templateUrl: '/app/views/latest.html'
+                templateUrl: 'app/views/latest.html'
             })
             .when('/history/:stationId', {
                 controller: 'HistoryController',
-                templateUrl: '/app/views/history.html'
+                templateUrl: 'app/views/history.html'
             })
             .otherwise({
                 redirectTo: '/'

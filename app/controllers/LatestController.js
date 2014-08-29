@@ -16,7 +16,7 @@
         $scope.bouyData = [];
     };
 
-    LatestController.$inject = [$scope, $routeParams];
+    LatestController.$inject = ['$scope', '$routeParams'];
 
     angular.module('ndbcApp')
         .controller('LatestController', LatestController);
